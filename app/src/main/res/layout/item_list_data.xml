@@ -8,17 +8,20 @@
         android:id="@+id/textViewName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre del Proyecto:" />
+        android:text="Nombre del Proyecto:"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textViewNumero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Número Departamento:" />
+        android:text="Número Departamento:"
+        android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textViewDirección"
+        android:id="@+id/textViewDireccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dirección Proyecto:" />
+        android:text="Dirección Proyecto:"
+        android:textSize="24sp" />
 </LinearLayout>
