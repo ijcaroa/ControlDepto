@@ -15,9 +15,8 @@ import com.example.controldepto.databinding.FragmentFirstBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FirstFragment extends Fragment {
+public class FirstFragment extends Fragment implements ListAdapter.IpassElement {
     private FragmentFirstBinding mBinding;
-
 
     @Override
     public View onCreateView(
@@ -25,13 +24,12 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         mBinding = FragmentFirstBinding.inflate(inflater,container,false);
-
         return mBinding.getRoot();
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ListAdapter listAdapter = new ListAdapter(apartmentList());
+        ListAdapter listAdapter = new ListAdapter(apartmentList(),this);
         mBinding.rVDatos.setAdapter(listAdapter);
         mBinding.rVDatos.setLayoutManager(new LinearLayoutManager(getContext()));
     }
@@ -73,6 +71,16 @@ public class FirstFragment extends Fragment {
             apartmentList.add(apartment15);
             return apartmentList;
         }
+
+    @Override
+    public void passElement(Apartment apartment) {
+        Bundle bundle = new Bundle();
+        bundle.putString("clave1",apartment.getUrlImageBuilding());
+        bundle.putString("clave2",apartment.getProjectName());
+        bundle.putString("clave3", apartment.getUnitId());
+        NavHostFragment.findNavController(FirstFragment.this)
+                .navigate(R.id.action_FirstFragment_to_SecondFragment,bundle);
     }
+}
 
 

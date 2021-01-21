@@ -6,22 +6,134 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-    <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+    <ImageView
+        android:id="@+id/iVBuild"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tVProject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="16dp"
+        android:text="Proyecto"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iVBuild" />
+
+    <TextView
+        android:id="@+id/tVUnidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="144dp"
+        android:text="Unidad"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iVBuild" />
+
+    <RadioGroup
+        android:id="@+id/rG1"
+        android:layout_width="278dp"
+        android:layout_height="186dp"
+        android:layout_marginEnd="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVProject">
+
+        <RadioButton
+            android:id="@+id/radioButtonLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Luces de la Unidad" />
+
+        <RadioButton
+            android:id="@+id/radioButtonBed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elementos del Dormitorio" />
+
+        <RadioButton
+            android:id="@+id/radioButtonKitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elementos de Cocina" />
+
+        <RadioButton
+            android:id="@+id/radioButtonWR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elementos de Baño" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rG2"
+        android:layout_width="277dp"
+        android:layout_height="136dp"
+        android:layout_marginEnd="200dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rG1">
+
+        <RadioButton
+            android:id="@+id/radioButtonN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Terminaciones Normal" />
+
+        <RadioButton
+            android:id="@+id/radioButtonR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Terminaciones Regular" />
+
+        <RadioButton
+            android:id="@+id/radioButtonM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Terminaciones Malas" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tVResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        android:text="Resultado"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toEndOf="@+id/rG1"
+        app:layout_constraintTop_toBottomOf="@+id/tVUnidad" />
 
     <Button
-        android:id="@+id/button_second"
+        android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/previous"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="140dp"
+        android:text="GUARDAR"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginBottom="140dp"
+        android:text="ALERTAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
