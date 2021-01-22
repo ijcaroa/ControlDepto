@@ -67,12 +67,14 @@ public class SecondFragment extends Fragment {
                         baño = 40;
                     }else baño = 0;
 
-                     int suma = luces + dormitorio + cocina + baño;
+                    int suma = luces + dormitorio + cocina + baño;
 
                     mBinding.tVResultado.setText(""+ suma);
 
                 }
             });
+
+
             //mBinding.rG2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
               //  @Override
                 //public void onCheckedChanged(RadioGroup group, int checkedId) {
