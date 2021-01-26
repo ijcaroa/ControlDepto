@@ -23,7 +23,7 @@ public class SecondFragment extends Fragment {
 
 
     private FragmentSecondBinding mBinding;
-    //CheckBox checkBox1,checkBox2,checkBox3,checkBox4;
+
 
     private int luces, dormitorio, cocina, baño, normal, regular, malo;
     public int total;
@@ -36,10 +36,7 @@ public class SecondFragment extends Fragment {
             image = getArguments().getString("clave1");
             textProject = getArguments().getString("clave2");
             textunit = getArguments().getString("clave3");
-            /*checkBox1 = (CheckBox)mBinding.ButtonLight;
-            checkBox2 = (CheckBox)mBinding.ButtonBed;
-            checkBox3 = (CheckBox)mBinding.ButtonKitch;
-            checkBox4 = (CheckBox)mBinding.ButtonWR;*/
+
          }
     }
 
@@ -58,40 +55,8 @@ public class SecondFragment extends Fragment {
         mBinding.tVUnidad.setText(textunit);
         Glide.with(view).load(image).into(mBinding.iVBuild);
 
-        mBinding.rG2.setOnCheckedChangeListener((group, checkedId) -> {
-            int index2 = mBinding.rG2.indexOfChild(mBinding.rG2.findViewById(checkedId));
-            int choice = 0;
-            if (index2 == 0) {
-                choice = 3;
-            } else if (index2 == 1) {
-                choice = 2;
-            } else if (index2 == 2) {
-                choice = 1;
-            }
-
-            String resultado = String.valueOf(choice);
-
-            mBinding.tVResultado.setText(resultado);
-
-        });
 
 
-
-          /*  if (checkBox1.isChecked()==true){
-                luces = 10;
-            }
-            if(checkBox2.isChecked()==true){
-                dormitorio=20;
-            }
-            if(checkBox3.isChecked()==true){
-                cocina=30;
-            }
-            if(checkBox4.isChecked()==true){
-                baño=40;
-            }
-
-            int sumaTotal = luces+dormitorio+cocina+baño;
-            mBinding.tVResultado.setText(""+sumaTotal);*/
 
            mBinding.ButtonLight.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -140,9 +105,23 @@ public class SecondFragment extends Fragment {
                     String check4 = String.valueOf(baño);
                     mBinding.tVResultado.setText(check4);
                 }
-                    
-            });
 
+            });
+        mBinding.rG2.setOnCheckedChangeListener((group, checkedId) -> {
+            int index2 = mBinding.rG2.indexOfChild(mBinding.rG2.findViewById(checkedId));
+            int choice = 0;
+            if (index2 == 0) {
+                choice = 3;
+            } else if (index2 == 1) {
+                choice = 2;
+            } else if (index2 == 2) {
+                choice = 1;
+            }
+
+            String resultado = String.valueOf(choice);
+            mBinding.tVResultado.setText(resultado);
+
+        });
 
 
 
