@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iVBuild" />
 
     <CheckBox
-        android:id="@+id/ButtonLight"
+        android:id="@+id/chBLight"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -53,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tVProject" />
 
     <CheckBox
-        android:id="@+id/ButtonBed"
+        android:id="@+id/chBBed"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -62,10 +62,10 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonLight" />
+        app:layout_constraintTop_toBottomOf="@+id/chBLight" />
 
     <CheckBox
-        android:id="@+id/ButtonKitch"
+        android:id="@+id/chBKitch"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -74,17 +74,17 @@
         app:layout_constraintEnd_toStartOf="@+id/tVResultado"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonBed" />
+        app:layout_constraintTop_toBottomOf="@+id/chBBed" />
 
     <CheckBox
-        android:id="@+id/ButtonWR"
+        android:id="@+id/chBWR"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:text="Elementos de Baño"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonKitch" />
+        app:layout_constraintTop_toBottomOf="@+id/chBKitch" />
 
     <RadioGroup
         android:id="@+id/rG2"
@@ -99,7 +99,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonWR">
+        app:layout_constraintTop_toBottomOf="@+id/chBWR">
 
         <RadioButton
             android:id="@+id/radioButtonN"
@@ -135,7 +135,7 @@
         android:text="Resultado"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ButtonWR"
+        app:layout_constraintStart_toEndOf="@+id/chBWR"
         app:layout_constraintTop_toBottomOf="@+id/tVUnidad" />
 
     <Button
