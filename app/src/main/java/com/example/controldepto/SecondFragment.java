@@ -1,5 +1,7 @@
 package com.example.controldepto;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,12 +31,8 @@ public class SecondFragment extends Fragment {
             image = getArguments().getString("clave1");
             textProject = getArguments().getString("clave2");
             textunit = getArguments().getString("clave3");
-
-
         }
-
     }
-
 
     @Override
     public View onCreateView(
@@ -61,10 +59,34 @@ public class SecondFragment extends Fragment {
             } else if (index2 == 2) {
                 choice = 1;
             }
-            int numFinal = (luces + dormitorio +cocina+baño) * choice;
+            int numFinal = (luces + dormitorio + cocina + baño) * choice;
             String total = String.valueOf(numFinal);
             mBinding.tVResultado.setText(total);
         });
+        mBinding.buttonSAlert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+             if (total < 130){
+                 sendMessage("");
+             } else if (total > 130){
+                 Toast.makeText(getContext(), "Presione Guardar", Toast.LENGTH_SHORT).show();
+             }
+            }
+        });
+
+        mBinding.buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              
+                if(total > 130) {
+                    Toast.makeText(getContext(), "El puntaje obtenidos es "+ total, Toast.LENGTH_SHORT).show();
+                }else if (total < 130){
+                    Toast.makeText(getContext(), "Presiona Alertar", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
         mBinding.chBLight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +117,7 @@ public class SecondFragment extends Fragment {
             cocina += 30;
             }
         }
-});
+    });
        mBinding.chBWR.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -107,7 +129,34 @@ public class SecondFragment extends Fragment {
            }
        });
     }
-}
+    private void sendMessage(String message){
+
+        String [] emails = {"ignacio.caro@outlook.com"};
+        Intent mIntent = new Intent(Intent.ACTION_SENDTO);
+        mIntent.setData(Uri.parse("mailto:"));
+        mIntent.putExtra(Intent.EXTRA_EMAIL, emails);
+        mIntent.putExtra(Intent.EXTRA_SUBJECT,"ALERTA");
+        mIntent.putExtra(Intent.EXTRA_TEXT, message);
+        if (mIntent.resolveActivity(getActivity().getPackageManager()) != null){
+            startActivity(mIntent);
+        } else {
+            Toast.makeText(getContext(), "Debes instalar una app de correo",
+                    Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 
 
 
