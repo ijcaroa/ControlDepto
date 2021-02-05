@@ -66,28 +66,26 @@ public class SecondFragment extends Fragment {
         mBinding.buttonSAlert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-             if (total < 130){
+              int valor = total;
+              
+             if (valor < 130){
                  sendMessage("");
-             } else if (total > 130){
+             } else if (valor > 130){
                  Toast.makeText(getContext(), "Presione Guardar", Toast.LENGTH_SHORT).show();
              }
             }
         });
-
         mBinding.buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              
-                if(total > 130) {
+                int valor2 = total;
+                if(valor2 > 130) {
                     Toast.makeText(getContext(), "El puntaje obtenidos es "+ total, Toast.LENGTH_SHORT).show();
-                }else if (total < 130){
+                }else if (valor2 < 130){
                     Toast.makeText(getContext(), "Presiona Alertar", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-
         mBinding.chBLight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +106,7 @@ public class SecondFragment extends Fragment {
                }
            }
        });
-    mBinding.chBKitch.setOnClickListener(new View.OnClickListener() {
+        mBinding.chBKitch.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Boolean indexCocina = mBinding.chBKitch.isChecked();
